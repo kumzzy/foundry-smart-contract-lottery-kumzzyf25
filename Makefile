@@ -18,3 +18,7 @@ deploy-addConsumer:
 
 deploy-fundSubscription:
 	@forge script script/Interactions.s.sol:FundSubscription --rpc-url $(SEPOLIA_RPC_URL) --account $(ACCOUNT_NAME) --broadcast -vvvv
+
+forge verify-contract:
+	@forge verify-contract 0x36A6742091Cc342b4b6e80E6a4F93d03bA39b7aa src/Raffle.sol:Raffle --etherscan-api-key $(ETHERSCAN_API_KE) --rpc-url $(SEPOLIA_RPC_URL) --show-standard-json-input > json.json
+
